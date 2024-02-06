@@ -1,0 +1,40 @@
+.search {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  max-width: 60rem;
+  align-items: center;
+  margin-bottom: 2rem;
+
+  &__input {
+    width: 100%;
+    max-width: 50rem;
+    padding: 1rem 1.5rem;
+    font-size: 1.5rem;
+    font-weight: 300;
+    color: black;
+    border-radius: 5px;
+    background-color: white;
+    border: 1px solid gainsboro;
+  }
+
+  input:focus {
+    outline: 1px solid rgb(69, 208, 255);
+  }
+
+  &__button {
+    cursor: pointer;
+    width: 5rem;
+    height: fit-content;
+    padding: 1.3rem 4rem;
+    border: none;
+    background-color: rgb(69, 208, 255);
+    border-radius: 5px;
+    color: white;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    margin-left: 1rem;
+  }
+}

@@ -1,0 +1,20 @@
+.main-page {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  flex-direction: column;
+
+  &__title {
+    font-size: 5rem;
+  }
+}
+
+.vacancy-cards {
+  display: flex;
+  flex-direction: column;
+  row-gap: 3rem;
+
+  width: 100%;
+  max-width: 70rem;
+}
