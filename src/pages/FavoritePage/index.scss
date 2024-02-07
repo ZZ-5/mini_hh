@@ -1,9 +1,21 @@
-.card {
+.favorite {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  flex-direction: column;
+
+  &__title {
+    font-size: 5rem;
+  }
+}
+
+.favoriteCard {
   width: 100%;
   display: flex;
   flex-direction: column;
   font-size: 2rem;
-  width: 70rem;
+  width: 40rem;
   box-shadow: -1px 0px 8px 0px rgba(34, 60, 80, 0.2);
 
   &__title {
@@ -22,17 +34,5 @@
 
   &__experience {
     color: gray;
-  }
-
-  &__btn-favorite {
-    width: 3rem;
-    height: 3rem;
-    margin: 1rem;
-    cursor: pointer;
-  }
-
-  &__icon {
-    width: 3rem;
-    height: 3rem;
   }
 }

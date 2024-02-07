@@ -3,9 +3,9 @@ import ReactDOM from 'react-dom/client';
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import { MainPage } from './pages/MainPage';
 import './styles/index.scss';
-import { VacancyPage } from './pages/VacancyPage';
 import { Provider } from 'react-redux';
 import { store } from './store';
+import { Favorite } from './pages/FavoritePage';
 
 const router = createBrowserRouter([
   {
@@ -13,8 +13,8 @@ const router = createBrowserRouter([
     element: <MainPage />
   },
   {
-    path: '/vacancy',
-    element: <VacancyPage />
+    path: '/favorite',
+    element: <Favorite />
   }
 ]);
 

@@ -3,6 +3,11 @@ export type CardsState = {
   isVacanciesLoading: boolean;
 };
 
+export type FavoritesCardsState = {
+  favoritesCards: VacancyCard[];
+  isFavoritesCards: boolean;
+};
+
 export type VacancyCard = {
   id: string;
   premium: boolean;

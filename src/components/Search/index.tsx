@@ -9,8 +9,7 @@ export const Search = () => {
   const dispatch = useAppDispatch();
 
   const btnSearch = () => {
-    // @ts-ignore
-    dispatch(getVacanciesCards({ text: text }));
+    dispatch(getVacanciesCards({ params: { text: text } }));
   };
 
   return (

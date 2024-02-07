@@ -1,13 +1,15 @@
-import { Store, configureStore } from '@reduxjs/toolkit';
+import { configureStore } from '@reduxjs/toolkit';
 import { vacanciesCardsReducer } from './cardsSlice';
+import { favoritesReducer } from './favoritesSlice';
 
 const reducer = {
-  vacanciesCards: vacanciesCardsReducer
+  vacanciesCards: vacanciesCardsReducer,
+  favorites: favoritesReducer
 };
 
-export const store: Store = configureStore({
-  reducer, // тоже самое что и reducer: reducer
-  middleware: getDefaultMiddleware => getDefaultMiddleware()
+export const store = configureStore({
+  reducer // тоже самое что и reducer: reducer
+  // middleware: getDefaultMiddleware => getDefaultMiddleware()
 });
 
 export type AppDispatch = typeof store.dispatch;

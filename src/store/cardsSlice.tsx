@@ -1,14 +1,16 @@
-import { createAsyncThunk, createSlice, AsyncThunk } from '@reduxjs/toolkit';
+import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
 import { CardsState, VacancyCard } from './types';
 import { apiService } from '../service/apiService';
+import { AxiosRequestConfig } from 'axios';
 
-export const getVacanciesCards = createAsyncThunk('getVacanciesCards', async params => {
-  const res = await apiService.get('vacancies', {
-    params: params
-  });
+export const getVacanciesCards = createAsyncThunk<VacancyCard[], AxiosRequestConfig | void>(
+  'getVacanciesCards',
+  async config => {
+    const res = await apiService.get('vacancies', { ...config });
 
-  return res.items;
-});
+    return res.items;
+  }
+);
 
 const initialState: CardsState = {
   vacanciesCards: [],
