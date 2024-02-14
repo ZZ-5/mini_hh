@@ -5,16 +5,47 @@
   width: 100%;
   flex-direction: column;
 
+  font-family: Arial, Helvetica, sans-serif;
+
   &__title {
     font-size: 5rem;
   }
+
+  &__links {
+    display: flex;
+    font-size: 2rem;
+    width: 100%;
+    justify-content: flex-end;
+    margin-right: 15rem;
+  }
+
+  &__link {
+    text-decoration: none;
+  }
 }
 
-.vacancy-cards {
+.vacancies {
   display: flex;
-  flex-direction: column;
-  row-gap: 3rem;
 
-  width: 100%;
-  max-width: 70rem;
+  &__filters {
+    display: flex;
+    flex-direction: column;
+    row-gap: 3rem;
+
+    width: 100%;
+    max-width: 70rem;
+
+    margin: 0 10rem 5rem 0;
+  }
+
+  &__cards {
+    display: flex;
+    flex-direction: column;
+    row-gap: 3rem;
+
+    width: 100%;
+    max-width: 70rem;
+
+    margin-bottom: 3rem;
+  }
 }

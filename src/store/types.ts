@@ -1,11 +1,27 @@
 export type CardsState = {
-  vacanciesCards: VacancyCard[];
+  vacanciesCards: VacanciesCards | undefined;
   isVacanciesLoading: boolean;
+  params: CardsStateParams;
 };
+
+export type CardsStateParams = Record<string, string> | URLSearchParams | undefined;
 
 export type FavoritesCardsState = {
   favoritesCards: VacancyCard[];
   isFavoritesCards: boolean;
+};
+
+export type VacanciesCards = {
+  alternate_url: string;
+  arguments: Arguments[] | null;
+  clusters: any[] | null;
+  fixes: any[] | null;
+  found: number;
+  items: VacancyCard[];
+  page: number;
+  pages: number;
+  per_page: number;
+  suggests: any[] | null;
 };
 
 export type VacancyCard = {
@@ -98,13 +114,17 @@ export type VacancyCardEmployer = {
   name: string;
   url: string;
   alternate_url: string;
-  logo_urls: VacancyCardEmployerLogoUrls;
+  logo_urls: VacancyCardEmployerLogoUrls | null;
   vacancies_url: string;
   accredited_it_employer: boolean;
   trusted: boolean;
 };
 
-export type VacancyCardEmployerLogoUrls = Record<string, string>;
+export type VacancyCardEmployerLogoUrls = {
+  90: string;
+  240: string;
+  original: string;
+};
 
 export type VacancyCardSnippet = {
   requirement: string;
@@ -129,4 +149,42 @@ export type VacancyExperience = {
 export type VacancyEmployment = {
   id: string;
   name: string;
+};
+
+export type FiltersDictionaries = {
+  experience: FilterExperience[];
+  employment: FilterEmployment[];
+  schedule: FilterSchedule[];
+};
+
+export type FilterExperience = {
+  id: string;
+  name: string;
+};
+
+export type FilterEmployment = {
+  id: string;
+  name: string;
+};
+
+export type FilterSchedule = {
+  id: string;
+  name: string;
+};
+
+export type Arguments = {
+  argument: string;
+  cluster_group: FilterClusterGroup;
+  disable_url: string;
+  value: string;
+  value_description: string;
+};
+
+export type FilterClusterGroup = {
+  id: string;
+  name: string;
+};
+
+export type Schedule = {
+  schedule: string;
 };

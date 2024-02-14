@@ -1,26 +1,44 @@
 import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
-import { CardsState, VacancyCard } from './types';
+import { CardsState, CardsStateParams, VacanciesCards } from './types';
 import { apiService } from '../service/apiService';
 import { AxiosRequestConfig } from 'axios';
 
-export const getVacanciesCards = createAsyncThunk<VacancyCard[], AxiosRequestConfig | void>(
+export const getVacanciesCards = createAsyncThunk<VacanciesCards, AxiosRequestConfig | void>(
   'getVacanciesCards',
   async config => {
-    const res = await apiService.get('vacancies', { ...config });
+    const res = await apiService.get('vacancies', {
+      ...config
+    });
 
-    return res.items;
+    console.log(res);
+
+    return res;
   }
 );
 
 const initialState: CardsState = {
-  vacanciesCards: [],
-  isVacanciesLoading: false
+  vacanciesCards: undefined,
+  isVacanciesLoading: false,
+  params: undefined
 };
 
 const cardsSlice = createSlice({
   name: 'cards',
   initialState,
-  reducers: {},
+  reducers: {
+    setParams: (
+      state,
+      action: {
+        payload: CardsStateParams;
+        type: string;
+      }
+    ) => {
+      state.params = {
+        ...state.params,
+        ...action.payload
+      };
+    }
+  },
   extraReducers: builder =>
     builder
       .addCase(getVacanciesCards.pending, state => {
@@ -36,3 +54,4 @@ const cardsSlice = createSlice({
 });
 
 export const vacanciesCardsReducer = cardsSlice.reducer;
+export const { setParams } = cardsSlice.actions;

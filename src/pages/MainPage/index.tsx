@@ -1,31 +1,29 @@
 import React, { FC } from 'react';
-import { useAppSelector } from '../../hooks';
 import './index.scss';
-import { Card } from '../../components/Card';
 import { Search } from '../../components/Search';
-import { VacancyCard } from '../../store/types';
 import { Link } from 'react-router-dom';
+import { Filters } from '../../components/Filter';
+import { Cards } from '../../components/Cards';
 
 interface Props {}
 
 export const MainPage: FC<Props> = () => {
-  const { vacanciesCards: cards, isVacanciesLoading: isLoading } = useAppSelector(
-    state => state.vacanciesCards
-  );
-
-  if (isLoading) {
-    return <div>ЗАГРУЗКА ...</div>;
-  }
-
   return (
     <div className="main-page">
-      <h1 className="main-page__title">Main Page</h1>
-      <Link to={'/favorite'}>Перейти</Link>
+      <div className="main-page__title">Main Page</div>
+      <div className="main-page__links">
+        <Link to={'/favorite'} className="main-page__link">
+          Избранное
+        </Link>
+      </div>
       <Search />
-      <div className="vacancy-cards">
-        {cards.map((i: VacancyCard) => {
-          return <Card item={i} key={i.id} />;
-        })}
+      <div className="vacancies">
+        <div className="vacancies__filters">
+          <Filters />
+        </div>
+        <div className="vacancies__cards">
+          <Cards />
+        </div>
       </div>
     </div>
   );

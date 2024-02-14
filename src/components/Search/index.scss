@@ -3,13 +3,19 @@
   justify-content: center;
   align-items: center;
   width: 100%;
-  max-width: 60rem;
+  // max-width: 60rem;
   align-items: center;
   margin-bottom: 2rem;
 
+  &__form {
+    width: 100%;
+    max-width: 98rem;
+    display: flex;
+    margin-left: 5rem;
+  }
+
   &__input {
     width: 100%;
-    max-width: 50rem;
     padding: 1rem 1.5rem;
     font-size: 1.5rem;
     font-weight: 300;

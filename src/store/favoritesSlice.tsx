@@ -17,10 +17,7 @@ const favoritesSlice = createSlice({
         type: string;
       }
     ) => {
-      console.log('action.payload ', action.payload);
       state.favoritesCards.push(action.payload);
-
-      console.log('state ', state);
     },
     removeToFavorite: (
       state,

@@ -1,0 +1,38 @@
+.pagination {
+  width: 100%;
+  max-width: 144rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+
+  list-style: none;
+  font-size: 2rem;
+
+  a {
+    color: black;
+    font-weight: 700;
+    padding: 1rem 1.6rem;
+  }
+
+  li {
+    cursor: pointer;
+    background-color: whitesmoke;
+    border-radius: 1rem;
+    padding: 1rem 0;
+  }
+
+  .disabled {
+    cursor: default;
+    opacity: 0.5;
+  }
+
+  .selected {
+    cursor: default;
+    background-color: rgb(208, 208, 208);
+
+    a {
+      color: black;
+    }
+  }
+}

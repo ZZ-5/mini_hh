@@ -4,9 +4,22 @@
   align-items: center;
   width: 100%;
   flex-direction: column;
+  row-gap: 3rem;
 
   &__title {
     font-size: 5rem;
+  }
+
+  &__links {
+    display: flex;
+    font-size: 2rem;
+    width: 100%;
+    justify-content: flex-end;
+    margin-right: 15rem;
+  }
+
+  &__link {
+    text-decoration: none;
   }
 }
 

@@ -6,6 +6,7 @@ import './styles/index.scss';
 import { Provider } from 'react-redux';
 import { store } from './store';
 import { Favorite } from './pages/FavoritePage';
+import { CurrentVacancy } from './pages/CurrentVacancy';
 
 const router = createBrowserRouter([
   {
@@ -15,6 +16,10 @@ const router = createBrowserRouter([
   {
     path: '/favorite',
     element: <Favorite />
+  },
+  {
+    path: '/vacancy/:id',
+    element: <CurrentVacancy />
   }
 ]);
 
