@@ -10,8 +10,6 @@ export const getVacanciesCards = createAsyncThunk<VacanciesCards, AxiosRequestCo
       ...config
     });
 
-    console.log(res);
-
     return res;
   }
 );
@@ -19,7 +17,7 @@ export const getVacanciesCards = createAsyncThunk<VacanciesCards, AxiosRequestCo
 const initialState: CardsState = {
   vacanciesCards: undefined,
   isVacanciesLoading: false,
-  params: undefined
+  params: new URLSearchParams()
 };
 
 const cardsSlice = createSlice({
@@ -33,10 +31,19 @@ const cardsSlice = createSlice({
         type: string;
       }
     ) => {
-      state.params = {
-        ...state.params,
-        ...action.payload
-      };
+      action.payload.forEach((value, key) => {
+        if (state.params.has(key, value)) {
+          state.params.delete(key, value);
+          return;
+        }
+
+        if (key === 'schedule') {
+          state.params.append(key, value);
+          return;
+        }
+
+        state.params.set(key, value);
+      });
     }
   },
   extraReducers: builder =>

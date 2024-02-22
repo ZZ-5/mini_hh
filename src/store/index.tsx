@@ -4,42 +4,6 @@ import { favoritesReducer } from './favoritesSlice';
 import { filtersDictionariesReducer } from './filtersDictionariesSlice';
 import { vacancySliceReducer } from './vacancy/vacancySlice';
 
-// const store = {
-//   vacanciesCards: {
-//     vacanciesCards: undefined,
-//     isVacanciesLoading: false,
-//     params: undefined,
-//     reducers: {
-//       setParams: ...
-//     },
-//     extraReducers: {
-//       getVacanciesCards: ...
-//     }
-//   },
-//   favorites: {
-//     favoritesCards: [],
-//     isFavoritesCards: false,
-//     reducers: {
-//       addToFavorite: ...,
-//       removeToFavorite: ...,
-//     },
-//   },
-//   filtersDictionaries: {
-//     experience: [],
-//     employment: [],
-//     reducers: {},
-//     extraReducers: {
-//       getFiltersDictionaries: ...
-//     }
-//   },
-//   vacancy: {
-//     vacancy: undefined,
-//     isVacancyLoading: false,
-//     reducers: { ... },
-//     extraReducers: { ... }
-//   }
-// }
-
 const reducer = {
   vacanciesCards: vacanciesCardsReducer,
   favorites: favoritesReducer,
@@ -48,8 +12,11 @@ const reducer = {
 };
 
 export const store = configureStore({
-  reducer // тоже самое что и reducer: reducer
-  // middleware: getDefaultMiddleware => getDefaultMiddleware()
+  reducer,
+  middleware: getDefaultMiddleware =>
+    getDefaultMiddleware({
+      serializableCheck: false
+    })
 });
 
 export type AppDispatch = typeof store.dispatch;

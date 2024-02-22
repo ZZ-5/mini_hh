@@ -25,8 +25,9 @@
   &__card {
     display: flex;
     width: 100%;
+    max-width: 74rem;
     flex-direction: column;
-    padding: 3rem;
+    padding: 3rem 0 3rem 3rem;
     box-shadow: 0 2px 12px 0 rgba(48, 50, 51, 0.1);
     border-radius: 4px;
   }
@@ -60,6 +61,26 @@
     font-size: 1.6rem;
     margin-top: 2rem;
   }
+}
+
+.column-vacancy div div div div {
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  padding: 0.5rem;
+  font-size: 1.6rem;
+}
+
+.column-vacancy ul li:last-child {
+  margin-bottom: 2rem;
+}
+
+.column-vacancy li {
+  margin-left: 2rem;
+}
+
+.column-vacancy p {
+  margin-bottom: 2rem;
 }
 
 .column-employer {

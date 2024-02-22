@@ -9,9 +9,7 @@ export const Search = () => {
   const dispatch = useAppDispatch();
 
   const btnSearch = () => {
-    const params = {
-      text: text
-    };
+    const params = new URLSearchParams({ text: text });
 
     dispatch(setParams(params));
     dispatch(getVacanciesCards({ params: params }));

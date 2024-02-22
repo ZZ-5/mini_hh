@@ -4,21 +4,19 @@ import { useAppSelector } from '../../hooks';
 import { VacancyCard } from '../../store/types';
 import { Card } from '../../components/Card';
 import { Link } from 'react-router-dom';
+import { Header } from '../../components/Header';
 
 export const Favorite = () => {
   const { favoritesCards } = useAppSelector(state => state.favorites);
 
   return (
-    <div className="favorite">
-      <div className="favorite__title">Favorite</div>
-      <div className="favorite__links">
-        <Link to={'/'} className="favorite__link">
-          Главная
-        </Link>
+    <>
+      <Header />
+      <div className="favorite">
+        {favoritesCards.map((i: VacancyCard) => {
+          return <Card item={i} key={i.id} />;
+        })}
       </div>
-      {favoritesCards.map((i: VacancyCard) => {
-        return <Card item={i} key={i.id} />;
-      })}
-    </div>
+    </>
   );
 };

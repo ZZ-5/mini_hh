@@ -89,6 +89,8 @@
     border: none;
     background-color: transparent;
     padding: 0;
+    position: relative;
+    z-index: 2;
   }
 
   &__icon {
@@ -100,5 +102,10 @@
   &__logo {
     object-fit: contain;
     width: 6rem;
+  }
+
+  .link {
+    position: relative;
+    z-index: 1;
   }
 }

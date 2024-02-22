@@ -3,15 +3,14 @@
   justify-content: center;
   align-items: center;
   width: 100%;
-  // max-width: 60rem;
   align-items: center;
-  margin-bottom: 2rem;
+  margin: 2rem 0;
 
   &__form {
     width: 100%;
-    max-width: 98rem;
+    max-width: 101rem;
     display: flex;
-    margin-left: 5rem;
+    margin-left: 4rem;
   }
 
   &__input {

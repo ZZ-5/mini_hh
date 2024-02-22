@@ -4,7 +4,7 @@ export type CardsState = {
   params: CardsStateParams;
 };
 
-export type CardsStateParams = Record<string, string> | URLSearchParams | undefined;
+export type CardsStateParams = URLSearchParams;
 
 export type FavoritesCardsState = {
   favoritesCards: VacancyCard[];
